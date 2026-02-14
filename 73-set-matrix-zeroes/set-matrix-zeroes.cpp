@@ -22,7 +22,6 @@ void setZeroes(vector<vector<int>>& vec) {
             }
         }
        }
-
        //this is time to fill rows and cols zeros
       for(int i = 1;i<vec.size();i++){
         if(vec[i][0]==0){
@@ -31,7 +30,6 @@ void setZeroes(vector<vector<int>>& vec) {
             }
         }
       }
-
       for(int j = 1;j<vec[0].size();j++){
         if(vec[0][j]==0){
             for(int i = 1;i<vec.size();i++){
@@ -39,7 +37,6 @@ void setZeroes(vector<vector<int>>& vec) {
             }
         }
       }
-     
         //make entire first row and col = 0
         if(row0){
             for(int i = 0;i<vec[0].size();i++){
@@ -51,7 +48,5 @@ void setZeroes(vector<vector<int>>& vec) {
                 vec[j][0] = 0;
             }
         }
-      
-
     }
 };
