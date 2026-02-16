@@ -2,14 +2,24 @@ class Solution {
 public:
 using ll = long long;
     vector<vector<int>> fourSum(vector<int>& nums, int target) {
-        set<vector<int>>st;
+        vector<vector<int>>ans;
+
         sort(nums.begin(),nums.end());
+
         for(int i = 0;i<nums.size();i++){
+            if(i > 0  && nums[i]==nums[i-1])continue;
+
             for(int j = i+1;j<nums.size();j++){
-                ll local_target = target-ll(nums[i] + nums[j]);
+                if(j>i+1  && nums[j]==nums[j-1])continue;
+
+                ll local_target = (ll)target-nums[i] - nums[j];
+
                 int start = j+1, end = nums.size()-1;
+
                 while(start < end){
-                    ll sum = nums[start] + nums[end];
+
+                    ll sum = (ll)nums[start] + (ll)nums[end];
+
                     if(sum > local_target){
                         end--;
                     }
@@ -17,13 +27,15 @@ using ll = long long;
                         start++;
                     }
                     else{
-                        st.insert({nums[i], nums[j], nums[start], nums[end]});
+                        ans.push_back({nums[i], nums[j], nums[start], nums[end]});
                         start++;
                         end--;
+                        while(start < end && nums[start] == nums[start-1])start++;
+                        while(end >start && nums[end] == nums[end+1])end--;
                     }
                 }
             }
         }
-        return vector<vector<int>>(st.begin(),st.end());
+        return ans;
     }
 };
