@@ -17,8 +17,12 @@ public:
                 st.insert({nums[i],nums[start], nums[end]});
                 start++;
                 end--;
+                while(start < end && nums[start] == nums[start-1])start++;
+                while(end > start && nums[end] == nums[end+1])end--;
             }
            }
+
+           
         }
         return vector<vector<int>>(st.begin(),st.end());
 
