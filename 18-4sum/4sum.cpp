@@ -11,9 +11,7 @@ using ll = long long;
                 ll local_target = (ll)target-nums[i] - nums[j];
                 int start = j+1, end = nums.size()-1;
                 while(start < end){
-
                     ll sum = (ll)nums[start] + (ll)nums[end];
-
                     if(sum > local_target){
                         end--;
                     }
