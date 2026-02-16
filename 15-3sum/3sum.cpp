@@ -21,10 +21,7 @@ public:
                 while(end > start && nums[end] == nums[end+1])end--;
             }
            }
-
-           
         }
         return vector<vector<int>>(st.begin(),st.end());
-
     }
 };
