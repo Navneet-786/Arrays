@@ -3,12 +3,13 @@ class Solution {
   bool check(vector<int>&vec, int k, int num){
       int count = 0;
       for(auto it:vec){
-          if(it%num==0){
-              count+= it/num;
-          }
-          else{
-              count+= ((it/num) + 1);
-          }
+        //   if(it%num==0){
+        //       count+= it/num;
+        //   }
+        //   else{
+        //       count+= ((it/num) + 1);
+        //   }
+        count += ceil((double)it/num);
       }
       return count <= k;
   }
